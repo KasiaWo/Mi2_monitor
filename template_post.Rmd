@@ -36,11 +36,13 @@ html_list <- htmltools::tagList()
 html_list[[1]] <- data %>%
 datatable(rownames = FALSE,
           class = 'cell-border stripe',
+          width = '100%',
           options = list(
             dom = 't',
             pageLength = 11,
             autoWidth = TRUE,
             columnDefs = list(list(
+              width = '200px',
               className = 'dt-left',
               targets = 0),
 list(className = 'dt-center', targets = 1))))
