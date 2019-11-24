@@ -1,7 +1,7 @@
 library(lubridate)
 library(dplyr)
 
-# event_database <- data.frame(date = c('12-11-2019', '18-11-2019', '25-11-2019',  '28-10-2019'),
+# event_database <- data.frame(date = c('12-11-2019', '18-11-2019', '25-11-2019',  '28-11-2019'),
 #                              person = c('prof. Jan Mielniczuk', 'Tomasz Stanisławek', 'Barbara Rychalska', 'dr Ewa Strzałkowska-Kominiak'),
 #                              title = c('Nowe problemy matematyczne w uczeniu maszynowym', 'prace z CoNLP', 'prace z ACL', 'Wybrane zagadnienia analizy przeżycia'),
 #                              location = c('s.102 MiNI', 's.44 MiNI', 's.44 MiNI', 's.40 MiNI'))
@@ -18,7 +18,9 @@ update_event_database <- function(event_database, date, person, title, location)
 
 event_database <- read.csv('./event_database.csv')
 
+## update
 
+event_database <- event_database[,-1]
 
 
 year_sel <- 2019

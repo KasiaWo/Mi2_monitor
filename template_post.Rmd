@@ -28,7 +28,7 @@ data <- params$data
 
 ```
 
-## Zbior danych
+
 
 ```{r}
 
