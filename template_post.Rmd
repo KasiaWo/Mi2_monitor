@@ -8,8 +8,17 @@ params:
   set_date: "2019-11-08"
 title: "`r params$set_title`"
 date: "`r params$set_date`"
-output: html_document
+output: 
+  flexdashboard::flex_dashboard
 --- 
+<style>                     
+.navbar {
+  background-color:rgb(74,60,137);
+  border-color:white;
+}
+</style>  
+
+
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(comment = NA, tidy = FALSE, warning = FALSE, message = FALSE, echo = FALSE)
 ```
@@ -31,22 +40,18 @@ data <- params$data
 
 
 ```{r}
-
-html_list <- htmltools::tagList()
-html_list[[1]] <- data %>%
+data %>%
 datatable(rownames = FALSE,
           class = 'cell-border stripe',
           width = '100%',
           options = list(
             dom = 't',
             pageLength = 11,
-            autoWidth = TRUE,
+            autoWidth = FALSE,
             columnDefs = list(list(
-              width = '200px',
               className = 'dt-left',
               targets = 0),
 list(className = 'dt-center', targets = 1))))
 
-html_list
 ```
 

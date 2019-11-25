@@ -35,13 +35,13 @@ event_database$date <- as.Date(event_database$date, format = '%d-%m-%Y')
 
     tmp <- tmp1 %>% 
       filter( month(date) == month_sel)
-    print(tmp)
+
     
     rmarkdown::render(input = './template_post.Rmd',
                       output_dir = './docs',
                       output_file = 'index.html',
                      params = list(data = tmp,
-                                    set_title = paste0('Wydarzenia na MiNI ', year_sel, " ", month_sel),
+                                    set_title = paste0('Wydarzenia na MiNI: ', month_sel, ".", year_sel),
                                     #set_slug = paste0('Post ', year_sel, " ", month_sel),
                                     set_date = Sys.Date()),
                       encoding = 'UTF-8')
