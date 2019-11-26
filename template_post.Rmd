@@ -51,7 +51,8 @@ datatable(rownames = FALSE,
             columnDefs = list(list(
               className = 'dt-left',
               targets = 0),
-list(className = 'dt-center', targets = 1))))
+list(className = 'dt-center', targets = 1))),
+colnames = c('Data', 'Godzina', 'Sala', 'Prelegent', 'Temat'))
 
 ```
 

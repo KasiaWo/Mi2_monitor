@@ -2,13 +2,15 @@ library(lubridate)
 library(dplyr)
 
 # event_database <- data.frame(date = c('12-11-2019', '18-11-2019', '25-11-2019',  '28-11-2019'),
+#                              time = c('12:15', '10:00', '10:00', '13:00'),
+#                              location = c('s.102 MiNI', 's.44 MiNI', 's.44 MiNI', 's.40 MiNI'),
 #                              person = c('prof. Jan Mielniczuk', 'Tomasz Stanisławek', 'Barbara Rychalska', 'dr Ewa Strzałkowska-Kominiak'),
-#                              title = c('Nowe problemy matematyczne w uczeniu maszynowym', 'prace z CoNLP', 'prace z ACL', 'Wybrane zagadnienia analizy przeżycia'),
-#                              location = c('s.102 MiNI', 's.44 MiNI', 's.44 MiNI', 's.40 MiNI'))
+#                              title = c('Nowe problemy matematyczne w uczeniu maszynowym', 'prace z CoNLP', 'prace z ACL', 'Wybrane zagadnienia analizy przeżycia')
+#                              )
 # write.csv(event_database, './event_database.csv')
 
-update_event_database <- function(event_database, date, person, title, location){
-  row_to_update <- data.frame(date = date, person = person, title = title, location = location )
+update_event_database <- function(event_database, date,time, person, title, location){
+  row_to_update <- data.frame(date = date, time = time, location = location, person = person, title = title)
   updated_event_database <- rbind(event_database, row_to_update)
   
   event_database <- unique(event_database)
